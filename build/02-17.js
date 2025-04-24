@@ -5,12 +5,14 @@ var p1 = {
   price: 200000,
   quantity: 2,
   order: function order() {
+    // 기존 방식
     if (!this.amount) {
       this.amount = this.quantity * this.price;
     }
     console.log("주문금액 : " + this.amount);
   },
   discount: function discount(rate) {
+    // 새로운 객체 리터럴 방식 
     if (rate > 0 && rate < 0.8) {
       this.amount = (1 - rate) * this.price * this.quantity;
     }
